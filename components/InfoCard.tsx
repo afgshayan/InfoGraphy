@@ -6,33 +6,36 @@ interface InfoCardProps {
   value: string;
   icon: React.ReactNode;
   subtitle?: string;
-  accentColor?: string;
+  accentColor?: 'blue' | 'red' | 'amber' | 'emerald';
 }
 
 export const InfoCard: React.FC<InfoCardProps> = ({ title, value, icon, subtitle, accentColor = "blue" }) => {
-  const colorMap: Record<string, string> = {
-    blue: "text-blue-400 bg-blue-400/10",
-    red: "text-red-400 bg-red-400/10",
-    amber: "text-amber-400 bg-amber-400/10",
-    slate: "text-slate-400 bg-slate-400/10",
+  const themes = {
+    blue: "text-blue-400 border-blue-500/20 bg-blue-500/5",
+    red: "text-red-400 border-red-500/20 bg-red-500/5",
+    amber: "text-amber-400 border-amber-500/20 bg-amber-500/5",
+    emerald: "text-emerald-400 border-emerald-500/20 bg-emerald-500/5",
   };
 
   return (
-    <div className="glass rounded-2xl p-6 transition-all duration-300 hover:bg-white/[0.06] hover:-translate-y-1 group">
-      <div className="flex justify-between items-start mb-4">
-        <div className={`p-2.5 rounded-xl ${colorMap[accentColor]}`}>
+    <div className={`glass-card border-glow rounded-3xl p-7 transition-all duration-500 hover:-translate-y-2 group ${themes[accentColor]}`}>
+      <div className="flex justify-between items-center mb-6">
+        <div className="p-3 rounded-2xl bg-white/5 border border-white/10 group-hover:scale-110 transition-transform duration-500">
           {icon}
         </div>
         {subtitle && (
-          <span className="text-[10px] font-bold uppercase tracking-widest text-slate-500 bg-slate-800 px-2 py-1 rounded">
+          <span className="text-[10px] font-black uppercase tracking-[0.2em] opacity-50 px-3 py-1 bg-white/5 rounded-full">
             {subtitle}
           </span>
         )}
       </div>
       <div>
-        <h3 className="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-1">{title}</h3>
-        <p className="text-3xl font-extrabold text-white group-hover:text-blue-400 transition-colors">{value}</p>
+        <h3 className="text-[11px] font-bold text-slate-500 uppercase tracking-[0.3em] mb-2">{title}</h3>
+        <p className="text-4xl font-extrabold text-white tracking-tighter leading-none group-hover:stats-gradient transition-all">
+          {value}
+        </p>
       </div>
+      <div className="mt-4 h-1 w-0 group-hover:w-full bg-current transition-all duration-700 opacity-20"></div>
     </div>
   );
 };

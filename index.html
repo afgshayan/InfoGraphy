@@ -4,51 +4,78 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TTP Infographic Project | Analytical Dashboard</title>
+    <title>TTP Intelligence Dashboard | Operational Analysis</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@200;400;700;800&display=swap" rel="stylesheet">
     <style>
+      :root {
+        --primary-glow: conic-gradient(from 180deg at 50% 50%, #16abff33 0deg, #0885ff33 55deg, #54d6ff33 120deg, #0071ff33 160deg, transparent 360deg);
+        --secondary-glow: radial-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+      }
       body {
         font-family: 'Plus Jakarta Sans', sans-serif;
-        background-color: #0f172a;
+        background-color: #020617;
         color: #f8fafc;
+        overflow-x: hidden;
       }
-      .glass {
-        background: rgba(255, 255, 255, 0.03);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.05);
+      h1, h2, .font-heading {
+        font-family: 'Space Grotesk', sans-serif;
       }
-      .glass-light {
-        background: rgba(255, 255, 255, 0.01);
-        backdrop-filter: blur(5px);
-        border: 1px solid rgba(255, 255, 255, 0.03);
+      .mesh-bg {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        z-index: -1;
+        background: radial-gradient(circle at 50% 50%, #0f172a 0%, #020617 100%);
       }
-      .gradient-text {
-        background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+      .mesh-bg::before {
+        content: '';
+        position: absolute;
+        width: 150%;
+        height: 150%;
+        background: var(--primary-glow);
+        filter: blur(100px);
+        top: -25%;
+        left: -25%;
+        animation: rotate 20s linear infinite;
+        opacity: 0.5;
+      }
+      @keyframes rotate {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+      .glass-card {
+        background: rgba(15, 23, 42, 0.6);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
+      }
+      .border-glow:hover {
+        border-color: rgba(59, 130, 246, 0.5);
+        box-shadow: 0 0 20px rgba(59, 130, 246, 0.2);
+      }
+      .stats-gradient {
+        background: linear-gradient(to right, #3b82f6, #60a5fa);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
       }
-      @keyframes pulse-soft {
-        0%, 100% { opacity: 1; }
-        50% { opacity: 0.7; }
-      }
-      .animate-pulse-soft {
-        animation: pulse-soft 3s infinite ease-in-out;
-      }
     </style>
-  <script type="importmap">
-{
-  "imports": {
-    "recharts": "https://esm.sh/recharts@^3.6.0",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "react/": "https://esm.sh/react@^19.2.3/",
-    "react": "https://esm.sh/react@^19.2.3",
-    "lucide-react": "https://esm.sh/lucide-react@^0.562.0"
-  }
-}
-</script>
-</head>
+    <script type="importmap">
+    {
+      "imports": {
+        "recharts": "https://esm.sh/recharts@^3.6.0",
+        "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+        "react/": "https://esm.sh/react@^19.2.3/",
+        "react": "https://esm.sh/react@^19.2.3",
+        "lucide-react": "https://esm.sh/lucide-react@^0.562.0"
+      }
+    }
+    </script>
+  </head>
   <body>
+    <div class="mesh-bg"></div>
     <div id="root"></div>
+    <!-- اضافه کردن اسکریپت ورود برای جلوگیری از صفحه سفید -->
+    <script type="module" src="./index.tsx"></script>
   </body>
 </html>
