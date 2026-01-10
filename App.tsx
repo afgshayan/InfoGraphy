@@ -319,7 +319,7 @@ const App: React.FC = () => {
                  <p className="text-sm text-slate-400">Fitted with Trijicon ACOG scopes for high-accuracy urban warfare.</p>
                </div>
                <div className="p-8 bg-white/5 border border-white/10 rounded-3xl">
-                 <p className="text-emerald-500 font-bold mb-2">M16A4 Platforms</p>
+                 <p className="text-emerald-500 font-bold mb-2">M16A4 Rifles</p>
                  <p className="text-sm text-slate-400">Integrated thermal imaging for long-range target acquisition.</p>
                </div>
             </div>
@@ -345,7 +345,7 @@ const App: React.FC = () => {
                     <ul className="text-sm font-bold text-slate-600 space-y-1">
                       <li>• Suicide jacket manufacturing plant</li>
                       <li>• Umar Media wing (TTP propaganda HQ)</li>
-                      <li>• Key command centers (Sher Zaman / Abu Hamza)</li>
+                      <li>• Key command centers (Sher Zaman / Abu Hamza / Akhtar Muhammad)</li>
                     </ul>
                   </div>
                 </div>
