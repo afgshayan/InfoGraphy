@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { 
-  Users, ShieldAlert, Target, TrendingUp, DollarSign, Network, 
+  Users, ShieldAlert, TrendingUp, DollarSign, Network, 
   History, Info, Zap, MapPin, Globe, Activity, Crosshair, 
   Flag, ChevronRight, Skull, AlertTriangle, Layers, Maximize, Lock, Eye
 } from 'lucide-react';
@@ -21,22 +21,22 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen pb-32">
-      {/* Enhanced Cinematic Full-Width Header */}
-      <header className="relative w-full pt-24 pb-32 px-4 md:px-12 overflow-hidden mb-32 min-h-[70vh] flex flex-col justify-center">
-        {/* Tactical Background Layer - Full Width */}
-        <div className="absolute inset-0 z-0 bg-slate-950">
-          <div className="absolute inset-0 topo-bg opacity-40"></div>
-          <div className="absolute inset-0 hero-gradient"></div>
-          <div className="scanline"></div>
+      {/* Redesigned Light & Professional Full-Width Header */}
+      <header className="relative w-full pt-24 pb-32 px-4 md:px-12 overflow-hidden mb-32 min-h-[60vh] flex flex-col justify-center border-b border-slate-200">
+        {/* Tactical Background Layer - Light Theme */}
+        <div className="absolute inset-0 z-0 bg-slate-50">
+          <div className="absolute inset-0 topo-bg opacity-100"></div>
+          <div className="absolute inset-0 hero-gradient-light"></div>
+          <div className="scanline-light"></div>
           
-          {/* Decorative Corner HUD Elements (Icons only as requested) */}
-          <div className="absolute top-12 left-12 text-blue-500/20">
+          {/* Decorative Corner Icons - Subtle Contrast */}
+          <div className="absolute top-12 left-12 text-slate-300">
             <Maximize size={24} />
           </div>
-          <div className="absolute top-12 right-12 text-red-500/20">
+          <div className="absolute top-12 right-12 text-slate-300">
             <Lock size={24} />
           </div>
-          <div className="absolute bottom-12 left-12 text-slate-500/20">
+          <div className="absolute bottom-12 left-12 text-slate-300">
             <Eye size={24} />
           </div>
         </div>
@@ -44,43 +44,41 @@ const App: React.FC = () => {
         {/* Header Content */}
         <div className="relative z-10 text-center space-y-12 max-w-[1440px] mx-auto w-full">
           <div className="flex flex-col items-center">
-            <div className="w-20 h-1 bg-red-600 mb-10 rounded-full shadow-[0_0_20px_rgba(220,38,38,0.5)]" />
+            <div className="w-24 h-1.5 bg-red-600 mb-10 rounded-full shadow-[0_4px_12px_rgba(220,38,38,0.2)]" />
             
             <h1 className="flex flex-col items-center">
-              <span className="text-4xl md:text-6xl lg:text-8xl font-heading font-black tracking-tighter leading-none header-title-gradient drop-shadow-2xl uppercase italic">
+              <span className="text-4xl md:text-6xl lg:text-8xl font-heading font-black tracking-tight leading-none header-title-gradient-dark uppercase">
                 Tehrik-i-Taliban Pakistan
               </span>
-              <span className="mt-6 text-2xl md:text-3xl lg:text-5xl text-red-600 title-spacing font-mono font-black opacity-100">
+              <span className="mt-6 text-2xl md:text-3xl lg:text-5xl text-red-600 title-spacing font-mono font-black">
                 (T T P)
               </span>
             </h1>
             
-            <div className="w-64 h-px bg-gradient-to-r from-transparent via-slate-500 to-transparent mt-12 opacity-30" />
+            <div className="w-64 h-px bg-gradient-to-r from-transparent via-slate-300 to-transparent mt-12 opacity-50" />
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto mt-20 px-4">
             <div className="group relative">
-               <div className="absolute -inset-0.5 bg-blue-600 rounded-[2.5rem] opacity-10 blur-xl group-hover:opacity-30 transition duration-700"></div>
-               <div className="relative dark-section-card p-10 rounded-[2.5rem] text-left border border-white/5 flex items-center space-x-8 overflow-hidden backdrop-blur-sm">
-                  <div className="shrink-0 p-5 rounded-2xl bg-blue-600/10 text-blue-500 border border-blue-500/10">
+               <div className="relative glass-card p-10 rounded-[2.5rem] text-left flex items-center space-x-8 overflow-hidden">
+                  <div className="shrink-0 p-5 rounded-2xl bg-blue-600 text-white shadow-lg shadow-blue-500/20">
                     <History size={32} />
                   </div>
                   <div>
-                    <h3 className="text-[10px] font-bold text-blue-400 uppercase tracking-[0.3em] mb-2">Operational Since</h3>
-                    <p className="text-3xl font-black text-white leading-tight">Dec 2007</p>
+                    <h3 className="text-[10px] font-bold text-slate-400 uppercase tracking-[0.3em] mb-2">Operational Since</h3>
+                    <p className="text-3xl font-black text-slate-900 leading-tight">Dec 2007</p>
                   </div>
                </div>
             </div>
 
             <div className="group relative">
-               <div className="absolute -inset-0.5 bg-red-600 rounded-[2.5rem] opacity-10 blur-xl group-hover:opacity-30 transition duration-700"></div>
-               <div className="relative dark-section-card p-10 rounded-[2.5rem] text-left border border-white/5 flex items-center space-x-8 overflow-hidden backdrop-blur-sm">
-                  <div className="shrink-0 p-5 rounded-2xl bg-red-600/10 text-red-500 border border-red-500/10">
+               <div className="relative glass-card p-10 rounded-[2.5rem] text-left flex items-center space-x-8 overflow-hidden">
+                  <div className="shrink-0 p-5 rounded-2xl bg-red-600 text-white shadow-lg shadow-red-500/20">
                     <Users size={32} />
                   </div>
                   <div>
-                    <h3 className="text-[10px] font-bold text-red-400 uppercase tracking-[0.3em] mb-2">Primary Founder</h3>
-                    <p className="text-3xl font-black text-white leading-tight">Baitullah Mehsud</p>
+                    <h3 className="text-[10px] font-bold text-slate-400 uppercase tracking-[0.3em] mb-2">Primary Founder</h3>
+                    <p className="text-3xl font-black text-slate-900 leading-tight">Baitullah Mehsud</p>
                   </div>
                </div>
             </div>
