@@ -6,7 +6,6 @@ import {
   Search, Flag, AlertCircle, Radio, Award
 } from 'lucide-react';
 import { ActivityChart, AttackTypePie, FundingPie } from './components/StatsCharts';
-// Import InfoCard component
 import { InfoCard } from './components/InfoCard';
 
 const App: React.FC = () => {
@@ -24,7 +23,7 @@ const App: React.FC = () => {
     <div className="min-h-screen pb-20 pt-20 px-4 md:px-8 max-w-[1400px] mx-auto space-y-24">
       {/* Header Section */}
       <header className="text-center space-y-10">
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-heading font-black tracking-tighter leading-tight stats-gradient max-w-6xl mx-auto uppercase">
+        <h1 className="text-5xl md:text-7xl lg:text-8xl font-heading font-black tracking-tight leading-tight stats-gradient max-w-6xl mx-auto">
           Tehrik-i-Taliban Pakistan (TTP)
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
