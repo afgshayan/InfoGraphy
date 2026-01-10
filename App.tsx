@@ -3,10 +3,9 @@ import React from 'react';
 import { 
   Users, ShieldAlert, Target, TrendingUp, DollarSign, Network, 
   History, Info, Zap, MapPin, Globe, Activity, Crosshair, 
-  Search, Flag, AlertCircle, Radio, Award, BarChart3, ChevronRight,
-  Skull, AlertTriangle, Layers, Maximize, Loader, Lock, Eye
+  Flag, ChevronRight, Skull, AlertTriangle, Layers, Maximize, Lock, Eye
 } from 'lucide-react';
-import { ActivityChart, AttackTypePie, FundingPie } from './components/StatsCharts';
+import { ActivityChart, FundingPie } from './components/StatsCharts';
 import { InfoCard } from './components/InfoCard';
 
 const App: React.FC = () => {
@@ -21,75 +20,67 @@ const App: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen pb-32 max-w-[1440px] mx-auto">
-      {/* New Enhanced Cinematic Header */}
-      <header className="relative w-full pt-16 pb-24 px-4 md:px-12 overflow-hidden mb-32">
-        {/* Tactical Background Layer */}
+    <div className="min-h-screen pb-32">
+      {/* Enhanced Cinematic Full-Width Header */}
+      <header className="relative w-full pt-24 pb-32 px-4 md:px-12 overflow-hidden mb-32 min-h-[70vh] flex flex-col justify-center">
+        {/* Tactical Background Layer - Full Width */}
         <div className="absolute inset-0 z-0 bg-slate-950">
-          <div className="absolute inset-0 topo-bg opacity-30"></div>
+          <div className="absolute inset-0 topo-bg opacity-40"></div>
           <div className="absolute inset-0 hero-gradient"></div>
           <div className="scanline"></div>
           
-          {/* Decorative Corner HUD Elements */}
-          <div className="absolute top-8 left-8 flex items-center space-x-3 text-blue-500/40 font-mono text-[10px] tracking-widest uppercase">
-            <Maximize size={12} />
-            <span>Sector_7_Analysis</span>
+          {/* Decorative Corner HUD Elements (Icons only as requested) */}
+          <div className="absolute top-12 left-12 text-blue-500/20">
+            <Maximize size={24} />
           </div>
-          <div className="absolute top-8 right-8 flex items-center space-x-3 text-red-500/40 font-mono text-[10px] tracking-widest uppercase">
-            <Lock size={12} />
-            <span>Confidential_Protocol_88</span>
+          <div className="absolute top-12 right-12 text-red-500/20">
+            <Lock size={24} />
           </div>
-          <div className="absolute bottom-8 left-8 flex items-center space-x-3 text-slate-500/40 font-mono text-[10px] tracking-widest uppercase">
-            <Eye size={12} />
-            <span>Target_Lock: 34.01°N 71.52°E</span>
+          <div className="absolute bottom-12 left-12 text-slate-500/20">
+            <Eye size={24} />
           </div>
         </div>
 
         {/* Header Content */}
-        <div className="relative z-10 text-center space-y-12">
+        <div className="relative z-10 text-center space-y-12 max-w-[1440px] mx-auto w-full">
           <div className="flex flex-col items-center">
-            <div className="inline-flex items-center space-x-4 mb-8 px-6 py-2 rounded-full border border-red-500/30 bg-red-500/10 backdrop-blur-md text-red-400 text-[11px] font-black uppercase tracking-[0.4em]">
-              <Loader size={14} className="animate-spin" />
-              <span>Internal Intelligence Stream</span>
-            </div>
+            <div className="w-20 h-1 bg-red-600 mb-10 rounded-full shadow-[0_0_20px_rgba(220,38,38,0.5)]" />
             
             <h1 className="flex flex-col items-center">
-              <span className="text-4xl md:text-5xl lg:text-7xl font-heading font-black tracking-tight leading-none text-white drop-shadow-2xl uppercase">
+              <span className="text-4xl md:text-6xl lg:text-8xl font-heading font-black tracking-tighter leading-none header-title-gradient drop-shadow-2xl uppercase italic">
                 Tehrik-i-Taliban Pakistan
               </span>
-              <span className="mt-4 text-3xl md:text-4xl lg:text-6xl text-red-600 title-spacing font-mono font-extrabold opacity-100 animate-pulse">
-                ( T T P )
+              <span className="mt-6 text-2xl md:text-3xl lg:text-5xl text-red-600 title-spacing font-mono font-black opacity-100">
+                (T T P)
               </span>
             </h1>
             
-            <div className="w-48 h-1.5 bg-gradient-to-r from-transparent via-red-600 to-transparent mt-10 rounded-full opacity-50" />
+            <div className="w-64 h-px bg-gradient-to-r from-transparent via-slate-500 to-transparent mt-12 opacity-30" />
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto mt-20 px-4">
             <div className="group relative">
-               <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-[2.5rem] opacity-20 blur group-hover:opacity-40 transition duration-500"></div>
-               <div className="relative dark-section-card p-10 rounded-[2.5rem] text-left border border-blue-500/20 flex items-center space-x-8 overflow-hidden">
-                  <div className="shrink-0 p-5 rounded-2xl bg-blue-600/10 text-blue-500 border border-blue-500/20">
+               <div className="absolute -inset-0.5 bg-blue-600 rounded-[2.5rem] opacity-10 blur-xl group-hover:opacity-30 transition duration-700"></div>
+               <div className="relative dark-section-card p-10 rounded-[2.5rem] text-left border border-white/5 flex items-center space-x-8 overflow-hidden backdrop-blur-sm">
+                  <div className="shrink-0 p-5 rounded-2xl bg-blue-600/10 text-blue-500 border border-blue-500/10">
                     <History size={32} />
                   </div>
                   <div>
                     <h3 className="text-[10px] font-bold text-blue-400 uppercase tracking-[0.3em] mb-2">Operational Since</h3>
                     <p className="text-3xl font-black text-white leading-tight">Dec 2007</p>
-                    <p className="text-xs text-slate-400 mt-2 font-medium">Unified alliance of militant groups</p>
                   </div>
                </div>
             </div>
 
             <div className="group relative">
-               <div className="absolute -inset-0.5 bg-gradient-to-r from-red-600 to-orange-600 rounded-[2.5rem] opacity-20 blur group-hover:opacity-40 transition duration-500"></div>
-               <div className="relative dark-section-card p-10 rounded-[2.5rem] text-left border border-red-500/20 flex items-center space-x-8 overflow-hidden">
-                  <div className="shrink-0 p-5 rounded-2xl bg-red-600/10 text-red-500 border border-red-500/20">
+               <div className="absolute -inset-0.5 bg-red-600 rounded-[2.5rem] opacity-10 blur-xl group-hover:opacity-30 transition duration-700"></div>
+               <div className="relative dark-section-card p-10 rounded-[2.5rem] text-left border border-white/5 flex items-center space-x-8 overflow-hidden backdrop-blur-sm">
+                  <div className="shrink-0 p-5 rounded-2xl bg-red-600/10 text-red-500 border border-red-500/10">
                     <Users size={32} />
                   </div>
                   <div>
                     <h3 className="text-[10px] font-bold text-red-400 uppercase tracking-[0.3em] mb-2">Primary Founder</h3>
                     <p className="text-3xl font-black text-white leading-tight">Baitullah Mehsud</p>
-                    <p className="text-xs text-slate-400 mt-2 font-medium">South Waziristan Central Figure</p>
                   </div>
                </div>
             </div>
@@ -98,7 +89,7 @@ const App: React.FC = () => {
       </header>
 
       {/* Main Content Area */}
-      <div className="px-4 md:px-12 space-y-32">
+      <div className="max-w-[1440px] mx-auto px-4 md:px-12 space-y-32">
         {/* Leadership Timeline */}
         <section className="space-y-16">
           <div className="flex flex-col items-center text-center space-y-4">
