@@ -364,11 +364,11 @@ const App: React.FC = () => {
             {[
               { date: "Mar 2009", title: "Lahore Police Academy", res: "8 killed, 100 wounded." },
               { date: "Oct 2009", title: "World Food Programme HQ", res: "Islamabad HQ targeted." },
-              { date: "Dec 2010", title: "Mohmand Agency Admin", res: "40+ killed in bombing." },
+              { date: "July 2010", title: "Relief distribution office in Mohmand Agency", res: "50+ killed." },
+              { date: "Dec 2010", title: "Administrative building in Mohmand Agency", res: "40+ killed." },
               { date: "May 2011", title: "Mehran Naval Base", res: "Karachi base attack; 10+ officers dead." },
               { date: "Oct 2012", title: "Malala Yousafzai Shooting", res: "Global outrage; attempt on activist." },
-              { date: "Dec 2014", title: "APS Peshawar Massacre", res: "130+ students martyred; darkest day." },
-              { date: "April 2021", title: "Quetta Hotel Bombing", res: "Targeting high-profile foreign guests." }
+              { date: "Dec 2014", title: "APS Peshawar Massacre", res: "130+ students martyred; darkest day." }
             ].map((a, i) => (
               <div key={i} className="relative pl-20 group">
                 <div className="absolute left-6 top-2 w-3 h-3 rounded-full bg-slate-200 group-hover:bg-red-600 transition-colors" />
