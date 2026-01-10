@@ -19,8 +19,8 @@ export const ActivityChart: React.FC<DualLineChartProps> = ({ data }) => {
           <YAxis yAxisId="left" axisLine={false} tickLine={false} tick={{fill: '#94a3b8', fontSize: 12}} label={{ value: 'Attacks', angle: -90, position: 'insideLeft', fill: '#94a3b8' }} />
           <YAxis yAxisId="right" orientation="right" axisLine={false} tickLine={false} tick={{fill: '#ef4444', fontSize: 12}} label={{ value: 'Deaths', angle: 90, position: 'insideRight', fill: '#ef4444' }} />
           <Tooltip 
-            contentStyle={{ backgroundColor: '#0f172a', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '12px' }}
-            itemStyle={{ fontSize: '12px', fontWeight: 'bold' }}
+            contentStyle={{ backgroundColor: '#0f172a', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '12px', color: '#fff' }}
+            itemStyle={{ fontSize: '12px', fontWeight: 'bold', color: '#fff' }}
           />
           <Legend wrapperStyle={{ paddingTop: '20px' }} />
           <Line yAxisId="left" type="monotone" dataKey="attacks" stroke="#94a3b8" strokeWidth={3} dot={{ r: 4, fill: '#94a3b8' }} name="Attacks (Black/Gray)" />
@@ -50,7 +50,10 @@ export const AttackTypePie: React.FC = () => {
           <Pie data={data} cx="50%" cy="50%" innerRadius={60} outerRadius={80} paddingAngle={5} dataKey="value">
             {data.map((entry, index) => <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} stroke="none" />)}
           </Pie>
-          <Tooltip contentStyle={{ backgroundColor: '#0f172a', border: 'none', borderRadius: '8px' }} />
+          <Tooltip 
+            contentStyle={{ backgroundColor: '#0f172a', border: 'none', borderRadius: '8px', color: '#fff' }} 
+            itemStyle={{ color: '#fff' }}
+          />
           <Legend />
         </PieChart>
       </ResponsiveContainer>
@@ -82,7 +85,10 @@ export const FundingPie: React.FC = () => {
           >
             {data.map((entry, index) => <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} stroke="none" />)}
           </Pie>
-          <Tooltip contentStyle={{ backgroundColor: '#0f172a', border: 'none', borderRadius: '8px' }} />
+          <Tooltip 
+            contentStyle={{ backgroundColor: '#0f172a', border: 'none', borderRadius: '8px', color: '#fff' }} 
+            itemStyle={{ color: '#fff' }}
+          />
           <Legend />
         </PieChart>
       </ResponsiveContainer>
