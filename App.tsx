@@ -386,11 +386,11 @@ const App: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                <div className="p-6 bg-white/5 rounded-2xl">
                   <p className="text-red-400 font-bold mb-2">Times Square Attempt (2010)</p>
-                  <p className="text-sm opacity-80 leading-relaxed">Failed bombing in New York City, USA, linked to TTP training camps.</p>
+                  <p className="text-sm opacity-80 leading-relaxed">Failed bombing in New York City, USA.</p>
                </div>
                <div className="p-6 bg-white/5 rounded-2xl">
                   <p className="text-red-400 font-bold mb-2">US Consulate Peshawar (2010)</p>
-                  <p className="text-sm opacity-80 leading-relaxed">Direct assault involving suicide bombers; 6 killed, 20 wounded.</p>
+                  <p className="text-sm opacity-80 leading-relaxed">Direct assault; 6 killed, 20 wounded.</p>
                </div>
             </div>
           </div>
