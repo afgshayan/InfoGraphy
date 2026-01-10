@@ -46,7 +46,6 @@ export const AttackTypePie: React.FC = () => {
   return (
     <div className="h-64 w-full">
       <ResponsiveContainer width="100%" height="100%">
-        {/* Fix: Added missing 'right' and 'left' properties to the margin prop to comply with Recharts Margin type */}
         <PieChart margin={{ top: 20, right: 0, bottom: 20, left: 0 }}>
           <Pie data={data} cx="50%" cy="50%" innerRadius={55} outerRadius={75} paddingAngle={5} dataKey="value">
             {data.map((entry, index) => <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} stroke="none" />)}
@@ -73,16 +72,36 @@ export const FundingPie: React.FC = () => {
   return (
     <div className="h-64 w-full">
       <ResponsiveContainer width="100%" height="100%">
-        <PieChart margin={{ top: 30, bottom: 30, left: 10, right: 10 }}>
+        <PieChart margin={{ top: 0, bottom: 0, left: 0, right: 0 }}>
           <Pie 
             data={data} 
             cx="50%" 
             cy="50%" 
             innerRadius={55} 
-            outerRadius={75} 
+            outerRadius={80} 
             paddingAngle={5} 
             dataKey="value"
-            label={({ value }) => `${value}%`}
+            labelLine={false}
+            label={({ cx, cy, midAngle, innerRadius, outerRadius, value }) => {
+              const RADIAN = Math.PI / 180;
+              // محاسبه مختصات دقیق برای وسط هر کمان (داخل چارت)
+              const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
+              const x = cx + radius * Math.cos(-midAngle * RADIAN);
+              const y = cy + radius * Math.sin(-midAngle * RADIAN);
+              return (
+                <text 
+                  x={x} 
+                  y={y} 
+                  fill="white" 
+                  textAnchor="middle" 
+                  dominantBaseline="central" 
+                  fontSize="12" 
+                  fontWeight="bold"
+                >
+                  {`${value}%`}
+                </text>
+              );
+            }}
           >
             {data.map((entry, index) => <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} stroke="none" />)}
           </Pie>
