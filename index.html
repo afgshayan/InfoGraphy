@@ -4,16 +4,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tehrik-i-Taliban Pakistan (TTP) Intelligence Briefing</title>
+    <title>TTP Intelligence Briefing | Comprehensive Analysis</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@200;400;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
     <style>
-      :root {
-        --primary-glow: conic-gradient(from 180deg at 50% 50%, rgba(59, 130, 246, 0.05) 0deg, rgba(239, 68, 68, 0.05) 120deg, rgba(59, 130, 246, 0.05) 240deg, transparent 360deg);
-      }
       body {
         font-family: 'Plus Jakarta Sans', sans-serif;
-        background-color: #fcfcfd;
+        background-color: #f8fafc;
         color: #0f172a;
         overflow-x: hidden;
       }
@@ -23,90 +20,69 @@
       .font-mono {
         font-family: 'JetBrains+Mono', monospace;
       }
-      .mesh-bg {
-        position: fixed;
-        width: 100vw;
-        height: 100vh;
-        z-index: -1;
-        background: 
-          radial-gradient(circle at 2px 2px, rgba(15, 23, 42, 0.03) 1px, transparent 0);
-        background-size: 40px 40px;
-      }
       .topo-bg {
         background-image: url("https://www.transparenttextures.com/patterns/topography.png");
         background-repeat: repeat;
-        opacity: 0.1;
+        opacity: 0.15;
       }
       .hero-gradient-light {
-        background: radial-gradient(circle at center, rgba(248, 250, 252, 0.5) 0%, rgba(226, 232, 240, 0.8) 100%);
+        background: radial-gradient(circle at center, rgba(241, 245, 249, 0.4) 0%, rgba(226, 232, 240, 0.8) 100%);
       }
       .glass-card {
-        background: rgba(255, 255, 255, 0.8);
-        backdrop-filter: blur(20px);
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(16px);
         border: 1px solid rgba(15, 23, 42, 0.08);
-        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        transition: all 0.3s ease;
       }
       .glass-card:hover {
-        border-color: rgba(37, 99, 235, 0.3);
-        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08);
+        transform: translateY(-4px);
+        box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.08);
       }
       .dark-section-card {
         background: #0f172a;
         color: #f8fafc;
         border: 1px solid rgba(255, 255, 255, 0.05);
-        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-      }
-      .stats-gradient {
-        background: linear-gradient(135deg, #0f172a 0%, #334155 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
-      .custom-scrollbar::-webkit-scrollbar {
-        width: 4px;
-      }
-      .custom-scrollbar::-webkit-scrollbar-track {
-        background: transparent;
-      }
-      .custom-scrollbar::-webkit-scrollbar-thumb {
-        background: rgba(59, 130, 246, 0.2);
-        border-radius: 10px;
       }
       .title-spacing {
-        letter-spacing: 0.1em;
+        letter-spacing: 0.05em;
       }
-      .scanline-light {
-        width: 100%;
-        height: 100px;
-        z-index: 5;
-        background: linear-gradient(to bottom, rgba(37, 99, 235, 0) 0%, rgba(37, 99, 235, 0.02) 50%, rgba(37, 99, 235, 0) 100%);
-        position: absolute;
-        animation: scan 12s linear infinite;
-        pointer-events: none;
-      }
-      @keyframes scan {
-        0% { top: -100px; }
-        100% { top: 100%; }
-      }
-      .header-title-gradient-dark {
-        background: linear-gradient(to bottom right, #0f172a 40%, #475569 100%);
+      .header-title-gradient {
+        background: linear-gradient(135deg, #0f172a 20%, #475569 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
       }
-    </style>
-    <script type="importmap">
-    {
-      "imports": {
-        "recharts": "https://esm.sh/recharts@^3.6.0",
-        "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-        "react/": "https://esm.sh/react@^19.2.3/",
-        "react": "https://esm.sh/react@^19.2.3",
-        "lucide-react": "https://esm.sh/lucide-react@^0.562.0"
+      .heatmap-high { background-color: #dc2626; }
+      .heatmap-med { background-color: #f97316; }
+      .heatmap-low { background-color: #facc15; }
+      
+      .timeline-dot {
+        position: relative;
       }
-    }
-    </script>
-  </head>
+      .timeline-dot::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        bottom: -40px;
+        width: 2px;
+        height: 40px;
+        background: #e2e8f0;
+      }
+      .custom-scrollbar::-webkit-scrollbar { width: 5px; }
+      .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "recharts": "https://esm.sh/recharts@^3.6.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0"
+  }
+}
+</script>
+</head>
   <body>
-    <div class="mesh-bg"></div>
     <div id="root"></div>
     <script type="module" src="./index.tsx"></script>
   </body>

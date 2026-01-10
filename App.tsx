@@ -1,11 +1,12 @@
 
 import React from 'react';
 import { 
-  Users, ShieldAlert, TrendingUp, DollarSign, Network, 
-  History, Info, Zap, MapPin, Globe, Activity, Crosshair, 
-  Flag, ChevronRight, Skull, AlertTriangle, Layers, Maximize, Lock, Eye
+  Users, TrendingUp, DollarSign, Network, History, Info, Zap, MapPin, 
+  Globe, Activity, Crosshair, Flag, ChevronRight, Skull, AlertTriangle, 
+  Layers, ShieldCheck, Target, HeartPulse, Building2, Landmark, 
+  Flame, Bomb, Plane, ExternalLink, Briefcase, Gem
 } from 'lucide-react';
-import { ActivityChart, FundingPie } from './components/StatsCharts';
+import { ActivityChart, FundingPie, AttackTypePie } from './components/StatsCharts';
 import { InfoCard } from './components/InfoCard';
 
 const App: React.FC = () => {
@@ -20,423 +21,401 @@ const App: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen pb-32">
-      {/* Redesigned Light & Professional Full-Width Header */}
-      <header className="relative w-full pt-24 pb-32 px-4 md:px-12 overflow-hidden mb-32 min-h-[60vh] flex flex-col justify-center border-b border-slate-200">
-        {/* Tactical Background Layer - Light Theme */}
-        <div className="absolute inset-0 z-0 bg-slate-50">
-          <div className="absolute inset-0 topo-bg opacity-100"></div>
-          <div className="absolute inset-0 hero-gradient-light"></div>
-          <div className="scanline-light"></div>
+    <div className="min-h-screen">
+      {/* PROFESSIONAL LIGHT HEADER */}
+      <header className="relative w-full pt-20 pb-28 px-4 md:px-12 overflow-hidden border-b border-slate-200 bg-slate-100">
+        <div className="absolute inset-0 z-0 topo-bg opacity-100"></div>
+        <div className="absolute inset-0 z-0 hero-gradient-light"></div>
+        
+        <div className="relative z-10 text-center max-w-6xl mx-auto">
+          <div className="inline-block px-4 py-1.5 mb-8 rounded-full bg-red-600 text-white text-[10px] font-black uppercase tracking-widest shadow-lg shadow-red-500/20">
+            Intelligence Dossier: TTP Profile
+          </div>
           
-          {/* Decorative Corner Icons - Subtle Contrast */}
-          <div className="absolute top-12 left-12 text-slate-300">
-            <Maximize size={24} />
-          </div>
-          <div className="absolute top-12 right-12 text-slate-300">
-            <Lock size={24} />
-          </div>
-          <div className="absolute bottom-12 left-12 text-slate-300">
-            <Eye size={24} />
-          </div>
-        </div>
+          <h1 className="flex flex-col items-center mb-8">
+            <span className="text-4xl md:text-6xl lg:text-8xl font-heading font-black tracking-tighter leading-none header-title-gradient uppercase">
+              Tehrik-i-Taliban Pakistan
+            </span>
+            <span className="mt-4 text-3xl md:text-4xl lg:text-5xl text-red-600 title-spacing font-mono font-black">
+              (T T P)
+            </span>
+          </h1>
 
-        {/* Header Content */}
-        <div className="relative z-10 text-center space-y-12 max-w-[1440px] mx-auto w-full">
-          <div className="flex flex-col items-center">
-            <div className="w-24 h-1.5 bg-red-600 mb-10 rounded-full shadow-[0_4px_12px_rgba(220,38,38,0.2)]" />
-            
-            <h1 className="flex flex-col items-center">
-              <span className="text-4xl md:text-6xl lg:text-8xl font-heading font-black tracking-tight leading-none header-title-gradient-dark uppercase">
-                Tehrik-i-Taliban Pakistan
-              </span>
-              <span className="mt-6 text-2xl md:text-3xl lg:text-5xl text-red-600 title-spacing font-mono font-black">
-                (T T P)
-              </span>
-            </h1>
-            
-            <div className="w-64 h-px bg-gradient-to-r from-transparent via-slate-300 to-transparent mt-12 opacity-50" />
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto mt-20 px-4">
-            <div className="group relative">
-               <div className="relative glass-card p-10 rounded-[2.5rem] text-left flex items-center space-x-8 overflow-hidden">
-                  <div className="shrink-0 p-5 rounded-2xl bg-blue-600 text-white shadow-lg shadow-blue-500/20">
-                    <History size={32} />
-                  </div>
-                  <div>
-                    <h3 className="text-[10px] font-bold text-slate-400 uppercase tracking-[0.3em] mb-2">Operational Since</h3>
-                    <p className="text-3xl font-black text-slate-900 leading-tight">Dec 2007</p>
-                  </div>
-               </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto mt-16">
+            <div className="glass-card p-8 rounded-[2rem] text-left flex items-center space-x-6">
+              <div className="p-4 bg-slate-900 text-white rounded-2xl shadow-xl">
+                <History size={28} />
+              </div>
+              <div>
+                <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Formation</p>
+                <p className="text-2xl font-black text-slate-900">Dec 2007</p>
+                <p className="text-xs text-slate-500">Alliance of militant groups</p>
+              </div>
             </div>
-
-            <div className="group relative">
-               <div className="relative glass-card p-10 rounded-[2.5rem] text-left flex items-center space-x-8 overflow-hidden">
-                  <div className="shrink-0 p-5 rounded-2xl bg-red-600 text-white shadow-lg shadow-red-500/20">
-                    <Users size={32} />
-                  </div>
-                  <div>
-                    <h3 className="text-[10px] font-bold text-slate-400 uppercase tracking-[0.3em] mb-2">Primary Founder</h3>
-                    <p className="text-3xl font-black text-slate-900 leading-tight">Baitullah Mehsud</p>
-                  </div>
-               </div>
+            <div className="glass-card p-8 rounded-[2rem] text-left flex items-center space-x-6">
+              <div className="p-4 bg-red-600 text-white rounded-2xl shadow-xl">
+                <Users size={28} />
+              </div>
+              <div>
+                <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Founder</p>
+                <p className="text-2xl font-black text-slate-900">Baitullah Mehsud</p>
+                <p className="text-xs text-slate-500">Centralized Command</p>
+              </div>
             </div>
           </div>
         </div>
       </header>
 
-      {/* Main Content Area */}
-      <div className="max-w-[1440px] mx-auto px-4 md:px-12 space-y-32">
-        {/* Leadership Timeline */}
+      {/* LEADERSHIP TIMELINE */}
+      <div className="max-w-[1440px] mx-auto px-4 md:px-12 py-32 space-y-40">
         <section className="space-y-16">
-          <div className="flex flex-col items-center text-center space-y-4">
-            <div className="w-12 h-12 bg-blue-600 rounded-2xl flex items-center justify-center text-white shadow-xl shadow-blue-500/20"><Users size={24} /></div>
-            <h2 className="text-4xl font-heading font-black text-slate-900 tracking-tight">THE LEADERSHIP SUCCESSION</h2>
-            <div className="w-24 h-1 bg-blue-600/10 rounded-full" />
+          <div className="text-center space-y-4">
+            <h2 className="text-4xl font-heading font-black text-slate-900 tracking-tight uppercase">Leadership Succession</h2>
+            <p className="text-slate-500 max-w-2xl mx-auto">Tracking the shift in high command since inception</p>
           </div>
           
-          <div className="relative pt-12 pb-16 overflow-x-auto custom-scrollbar">
-            <div className="flex min-w-[1000px] justify-between items-start relative px-10">
-              <div className="absolute top-[46px] left-[10%] right-[10%] h-1 bg-gradient-to-r from-blue-600/5 via-blue-600/40 to-blue-600/5 -z-10 rounded-full" />
-              
+          <div className="relative pt-10 pb-16 overflow-x-auto custom-scrollbar">
+            <div className="flex min-w-[1000px] justify-between relative px-10">
+              <div className="absolute top-[32px] left-[10%] right-[10%] h-0.5 bg-slate-200 -z-10" />
               {[
-                { year: '2007–2009', name: 'Baitullah Mehsud', status: 'Killed in CIA Strike' },
+                { year: '2007–2009', name: 'Baitullah Mehsud', status: 'Founder / Killed' },
                 { year: '2009–2013', name: 'Hakimullah Mehsud', status: 'Killed in Drone Strike' },
-                { year: '2013–2018', name: 'Mullah Fazlullah', status: 'Killed in Drone Strike' },
-                { year: '2018–Present', name: 'Noor Wali Mehsud', status: 'Active Commander' }
+                { year: '2013–2018', name: 'Mullah Fazlullah', status: 'Killed in Airstrike' },
+                { year: '2018–Present', name: 'Noor Wali Mehsud', status: 'Current Emir' }
               ].map((leader, i) => (
-                <div key={i} className="flex-1 relative px-8 text-center group cursor-default">
-                  <div className="w-12 h-12 rounded-2xl bg-white border-2 border-blue-600 mx-auto mb-8 flex items-center justify-center shadow-lg group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
-                    <span className="font-bold text-sm">{i + 1}</span>
+                <div key={i} className="flex-1 text-center px-4">
+                  <div className={`w-16 h-16 rounded-full mx-auto mb-6 flex items-center justify-center border-4 border-white shadow-xl transition-all duration-300 ${i === 3 ? 'bg-red-600 text-white' : 'bg-slate-900 text-white'}`}>
+                    <Skull size={24} />
                   </div>
-                  <p className="text-blue-600 font-bold text-[10px] uppercase tracking-widest mb-2">{leader.year}</p>
-                  <p className="text-2xl font-black text-slate-900 mb-1 group-hover:text-blue-600 transition-colors">{leader.name}</p>
-                  <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">{leader.status}</p>
+                  <p className="text-red-600 font-bold text-xs uppercase mb-1">{leader.year}</p>
+                  <p className="text-xl font-black text-slate-900 leading-tight">{leader.name}</p>
+                  <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mt-2">{leader.status}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Core Profile Grid */}
+        {/* CORE PROFILE GRID */}
         <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <InfoCard 
-            title="Tactical Strength" 
-            value="~6,000 Fighters" 
-            icon={<Skull size={32} />} 
-            accentColor="red"
-            subtitle="Estimated"
-          />
-          <InfoCard 
-            title="Primary Ideology" 
-            value="Radical Deobandi Salafism" 
-            icon={<Layers size={32} />} 
-            accentColor="blue"
-            subtitle="Theological"
-          />
-          <InfoCard 
-            title="Political Goal" 
-            value="Sharia-Based Islamic State" 
-            icon={<Flag size={32} />} 
-            accentColor="amber"
-            subtitle="Strategic"
-          />
-          <InfoCard 
-            title="Operational Shift" 
-            value="Targeting Security Forces" 
-            icon={<Crosshair size={32} />} 
-            accentColor="emerald"
-            subtitle="Recent"
-          />
+          <InfoCard title="Operational Strength" value="~6,000 Fighters" icon={<Skull />} accentColor="red" subtitle="Combat Ready" />
+          <InfoCard title="Primary Ideology" value="Radical Deobandi" icon={<Layers />} accentColor="blue" subtitle="Theological" />
+          <InfoCard title="Core Objective" value="Establish Islamic State" icon={<Flag />} accentColor="amber" subtitle="Overthrow Secular Gov" />
+          <InfoCard title="Strategic Shift" value="Targeting Security" icon={<Target />} accentColor="emerald" subtitle="Since 2018" />
         </section>
 
-        {/* Organizational Structure */}
-        <section className="dark-section-card p-16 md:p-24 rounded-[4rem] text-center relative overflow-hidden group">
-          <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
-            <Network size={600} className="absolute -bottom-40 -right-40 text-blue-500 group-hover:scale-110 transition-transform duration-1000" />
-          </div>
+        {/* SHADOW GOVERNANCE */}
+        <section className="dark-section-card p-16 md:p-24 rounded-[3rem] relative overflow-hidden text-center">
+          <div className="absolute top-0 right-0 p-10 opacity-10"><Network size={400} /></div>
           <div className="relative z-10 space-y-8">
-            <div className="inline-flex p-5 rounded-3xl bg-blue-600/10 border border-blue-500/20 text-blue-400 mb-4">
-              <Network size={40} />
-            </div>
-            <h2 className="text-5xl font-heading font-black tracking-tight uppercase">Shadow Governance</h2>
-            <div className="max-w-4xl mx-auto space-y-6">
-              <p className="text-4xl font-bold text-white leading-tight">A Parallel State Infrastructure</p>
-              <p className="text-xl text-slate-400 font-medium">Divided into 9 shadow provinces, each managed by appointed governors, specialized ministries, and judicial courts.</p>
-            </div>
-            <div className="flex flex-wrap justify-center gap-4 pt-8">
-               {["Intelligence", "Finance", "Information", "Education", "Health", "Judiciary"].map((dept, idx) => (
-                 <span key={idx} className="px-6 py-2 rounded-full border border-white/10 bg-white/5 text-xs font-bold uppercase tracking-widest text-slate-300">
-                   {dept} Wing
-                 </span>
-               ))}
+            <h2 className="text-4xl md:text-5xl font-heading font-black uppercase">Shadow Governance</h2>
+            <p className="text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
+              Operating a parallel state with <span className="text-white font-bold">9 shadow provinces</span>. Each managed by appointed governors, ministries, and specialized judicial courts.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4 pt-4">
+              {['Interior', 'Finance', 'Propaganda', 'Judiciary', 'Intelligence', 'Health'].map(m => (
+                <span key={m} className="px-5 py-2 rounded-full border border-white/10 bg-white/5 text-[10px] font-black uppercase tracking-widest">{m} Ministry</span>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* Operational Footprint */}
+        {/* GEOGRAPHY HEATMAP */}
         <section className="space-y-16">
           <div className="flex items-center space-x-6">
-            <div className="p-4 glass-card rounded-2xl text-amber-600 shadow-xl shadow-amber-500/10"><MapPin size={32} /></div>
-            <h2 className="text-4xl font-heading font-black text-slate-900 uppercase tracking-tight">Operational Footprint</h2>
+            <div className="p-4 glass-card rounded-2xl text-amber-600"><MapPin size={32} /></div>
+            <h2 className="text-4xl font-heading font-black text-slate-900 uppercase">Operational Footprint</h2>
           </div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-            <div className="lg:col-span-5 space-y-6">
-              {[
-                { province: "Khyber Pakhtunkhwa", status: "Active Epicenter", desc: "Core base of operations and majority of attack volume.", color: "bg-red-600", val: "78%" },
-                { province: "Balochistan", status: "Strategic Hub", desc: "Fluctuating intensity (5-24 annual major incidents).", color: "bg-orange-500", val: "14%" },
-                { province: "Punjab", status: "Emerging Front", desc: "Rising activity: 9 attacks in 2023 to 19+ in 2024.", color: "bg-amber-500", val: "6%" },
-                { province: "Sindh", status: "Isolated Urban", desc: "Mainly focused on financial/targeted strikes in Karachi.", color: "bg-yellow-500", val: "2%" }
-              ].map((item, i) => (
-                <div key={i} className="glass-card p-8 rounded-[2.5rem] border-l-[10px] flex items-center justify-between" style={{ borderLeftColor: item.color.replace('bg-', '') === 'red-600' ? '#dc2626' : item.color.replace('bg-', '') === 'orange-500' ? '#f97316' : item.color.replace('bg-', '') === 'amber-500' ? '#f59e0b' : '#eab308' }}>
-                  <div className="space-y-1">
-                    <div className="flex items-center space-x-3 mb-1">
-                      <span className="text-xl font-black text-slate-900">{item.province}</span>
-                      <span className={`text-[8px] font-black uppercase tracking-widest px-2 py-0.5 rounded-full text-white ${item.color}`}>{item.status}</span>
-                    </div>
-                    <p className="text-slate-500 text-sm">{item.desc}</p>
-                  </div>
-                  <div className="text-right">
-                    <span className="text-2xl font-black text-slate-900">{item.val}</span>
-                    <p className="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Share</p>
-                  </div>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+            <div className="lg:col-span-5 space-y-4">
+              <div className="glass-card p-8 rounded-[2rem] flex items-center justify-between border-l-8 border-red-600">
+                <div>
+                  <h4 className="text-xl font-black">Khyber Pakhtunkhwa</h4>
+                  <p className="text-sm text-slate-500">Core Epicenter & Base</p>
                 </div>
-              ))}
+                <div className="px-4 py-2 bg-red-100 text-red-600 font-black rounded-xl">HEATMAP: HIGH</div>
+              </div>
+              <div className="glass-card p-8 rounded-[2rem] flex items-center justify-between border-l-8 border-orange-500">
+                <div>
+                  <h4 className="text-xl font-black">Balochistan</h4>
+                  <p className="text-sm text-slate-500">5–24 attacks annually</p>
+                </div>
+                <div className="px-4 py-2 bg-orange-100 text-orange-600 font-black rounded-xl">MED</div>
+              </div>
+              <div className="glass-card p-8 rounded-[2rem] flex items-center justify-between border-l-8 border-yellow-500">
+                <div>
+                  <h4 className="text-xl font-black">Punjab</h4>
+                  <p className="text-sm text-slate-500">9 in '23 → 19 in '24</p>
+                </div>
+                <div className="px-4 py-2 bg-yellow-100 text-yellow-600 font-black rounded-xl">NEW THEATER</div>
+              </div>
+              <div className="glass-card p-8 rounded-[2rem] flex items-center justify-between border-l-8 border-yellow-300">
+                <div>
+                  <h4 className="text-xl font-black">Sindh (Karachi)</h4>
+                  <p className="text-sm text-slate-500">2 in '23 → 5 in '24</p>
+                </div>
+                <div className="px-4 py-2 bg-yellow-50 text-yellow-400 font-black rounded-xl">LOW</div>
+              </div>
             </div>
             
-            <div className="lg:col-span-7 glass-card p-16 rounded-[4rem] relative overflow-hidden bg-slate-50/50 flex flex-col justify-center border-none shadow-inner border border-slate-200">
-               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.02] pointer-events-none">
-                  <Globe size={600} />
-               </div>
-               <div className="space-y-10 relative z-10">
-                  <div className="space-y-2">
-                     <h3 className="text-3xl font-black text-slate-900">Regional Threat Density</h3>
-                     <p className="text-slate-500 font-medium">Heatmap distribution of TTP operational capability</p>
-                  </div>
-                  
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                     <div className="p-6 bg-white rounded-3xl border border-slate-100 shadow-sm flex items-center space-x-4">
-                        <div className="w-5 h-5 rounded-full bg-red-600 shadow-lg shadow-red-500/20" />
-                        <div>
-                          <p className="text-sm font-bold text-slate-900">High Intensity</p>
-                          <p className="text-[10px] text-slate-400 uppercase font-black">KPK & Border Areas</p>
-                        </div>
-                     </div>
-                     <div className="p-6 bg-white rounded-3xl border border-slate-100 shadow-sm flex items-center space-x-4">
-                        <div className="w-5 h-5 rounded-full bg-orange-500 shadow-lg shadow-orange-500/20" />
-                        <div>
-                          <p className="text-sm font-bold text-slate-900">Medium Intensity</p>
-                          <p className="text-[10px] text-slate-400 uppercase font-black">Balochistan Sector</p>
-                        </div>
-                     </div>
-                     <div className="p-6 bg-white rounded-3xl border border-slate-100 shadow-sm flex items-center space-x-4">
-                        <div className="w-5 h-5 rounded-full bg-yellow-500 shadow-lg shadow-yellow-500/20" />
-                        <div>
-                          <p className="text-sm font-bold text-slate-900">Low/Strategic</p>
-                          <p className="text-[10px] text-slate-400 uppercase font-black">Punjab & Urban Sindh</p>
-                        </div>
-                     </div>
-                     <div className="p-6 bg-blue-600 rounded-3xl text-white shadow-xl shadow-blue-500/20 flex items-center space-x-4">
-                        <Activity size={24} />
-                        <div>
-                          <p className="text-sm font-bold">Dynamic Shift</p>
-                          <p className="text-[10px] uppercase font-black opacity-80">Increased Lethality</p>
-                        </div>
-                     </div>
-                  </div>
-               </div>
+            <div className="lg:col-span-7 bg-white p-12 rounded-[3rem] border border-slate-100 shadow-inner flex flex-col justify-center text-center space-y-8">
+              <Globe className="mx-auto text-slate-200" size={120} />
+              <div>
+                <h3 className="text-2xl font-black mb-4 uppercase">Regional Attack Distribution</h3>
+                <p className="text-slate-500">Visualizing the spread from tribal border regions to urban centers like Lahore and Karachi.</p>
+              </div>
+              <div className="grid grid-cols-3 gap-4">
+                <div className="p-4 bg-slate-50 rounded-2xl">
+                   <AlertTriangle className="mx-auto mb-2 text-red-600" />
+                   <p className="text-[10px] font-black uppercase tracking-widest">KPK: Red Zone</p>
+                </div>
+                <div className="p-4 bg-slate-50 rounded-2xl">
+                   <Target className="mx-auto mb-2 text-orange-500" />
+                   <p className="text-[10px] font-black uppercase tracking-widest">Balochistan Sector</p>
+                </div>
+                <div className="p-4 bg-slate-50 rounded-2xl">
+                   <Activity className="mx-auto mb-2 text-yellow-500" />
+                   <p className="text-[10px] font-black uppercase tracking-widest">Punjab Front</p>
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Activity Stats */}
+        {/* ACTIVITY STATS */}
         <section className="space-y-16">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-6">
-              <div className="p-4 glass-card rounded-2xl text-red-600 shadow-xl shadow-red-500/10"><TrendingUp size={32} /></div>
-              <h2 className="text-4xl font-heading font-black text-slate-900 uppercase tracking-tight">Attack Dynamics (2019-2025)</h2>
-            </div>
+          <div className="flex items-center space-x-6">
+            <div className="p-4 glass-card rounded-2xl text-red-600"><TrendingUp size={32} /></div>
+            <h2 className="text-4xl font-heading font-black text-slate-900 uppercase">Trend Analysis (2019-2025)</h2>
           </div>
           
-          <div className="dark-section-card p-12 md:p-20 rounded-[4rem] space-y-16">
-            <div className="flex flex-wrap items-center gap-6">
-              <div className="flex items-center space-x-4 text-emerald-400 font-bold bg-white/5 px-8 py-4 rounded-3xl border border-white/10">
-                <AlertTriangle size={24} />
-                <span className="text-xl">Highest death toll since 2011 (52% of total domestic terror deaths)</span>
-              </div>
+          <div className="dark-section-card p-12 md:p-20 rounded-[3rem] space-y-12">
+            <div className="flex items-center space-x-4 p-6 bg-red-600/10 border border-red-600/20 rounded-2xl text-red-400">
+              <AlertTriangle />
+              <p className="text-lg font-bold">52% of all terrorism-related deaths in Pakistan (2024) linked to TTP.</p>
             </div>
             
-            <div className="bg-white/[0.03] p-10 rounded-[3rem] border border-white/5 relative overflow-hidden">
-              <div className="absolute top-8 right-8 text-right opacity-40">
-                <p className="text-[10px] font-black uppercase tracking-widest mb-1 text-slate-400">Visualization</p>
-                <p className="text-xs font-bold text-white">Lethality vs Frequency</p>
-              </div>
+            <div className="bg-white/5 p-8 rounded-[2rem] border border-white/5">
               <ActivityChart data={activityData} />
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="p-10 bg-white/5 rounded-[2.5rem] border border-white/10 group hover:bg-white/[0.08] transition-colors">
-                 <h4 className="text-[10px] font-black text-slate-500 uppercase tracking-[0.3em] mb-6">Historical Data</h4>
-                 <p className="text-2xl font-bold leading-tight">Activity surging to post-2014 levels across all indices</p>
+              <div className="p-8 bg-white/5 rounded-3xl border border-white/5">
+                <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-4">2024 Historical Peak</p>
+                <p className="text-4xl font-black">482 Attacks</p>
+                <p className="text-slate-400 mt-2">Highest ever frequency; deaths highest since 2011.</p>
               </div>
-              <div className="p-10 bg-red-600 rounded-[2.5rem] shadow-2xl shadow-red-600/20 text-white">
-                 <h4 className="text-[10px] font-black uppercase tracking-[0.3em] mb-6 opacity-80">2024 Audit</h4>
-                 <p className="text-5xl font-black mb-1">482 Attacks</p>
-                 <p className="text-2xl font-bold opacity-90">558 Fatalities</p>
+              <div className="p-8 bg-red-600 rounded-3xl text-white shadow-xl shadow-red-500/20">
+                <p className="text-[10px] font-bold opacity-70 uppercase tracking-widest mb-4">Total 2024 Fatalities</p>
+                <p className="text-4xl font-black">558 Killed</p>
+                <p className="opacity-80 mt-2">Significant surge in lethality.</p>
               </div>
-              <div className="p-10 bg-blue-600 rounded-[2.5rem] shadow-2xl shadow-blue-600/20 text-white">
-                 <h4 className="text-[10px] font-black uppercase tracking-[0.3em] mb-6 opacity-80">2025 Projection</h4>
-                 <p className="text-5xl font-black mb-1">605 Attacks</p>
-                 <p className="text-2xl font-bold opacity-90">217 Fatalities</p>
+              <div className="p-8 bg-white/5 rounded-3xl border border-white/5">
+                <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-4">2025 Projections</p>
+                <p className="text-4xl font-black">605 Attacks</p>
+                <p className="text-slate-400 mt-2">Estimated activity based on current momentum.</p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Weapons & Military Grade Hardware */}
-        <section className="glass-card p-16 md:p-24 rounded-[4rem] relative overflow-hidden group border-none shadow-2xl bg-gradient-to-br from-slate-50 to-white">
-          <div className="absolute top-0 right-0 p-16 opacity-[0.03] group-hover:opacity-[0.06] transition-opacity duration-700">
-            <ShieldAlert size={300} className="text-slate-900" />
+        {/* ATTACK METHODS & TARGETS */}
+        <section className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          <div className="space-y-12">
+             <div className="flex items-center space-x-4">
+               <div className="p-3 bg-red-100 text-red-600 rounded-xl"><Bomb /></div>
+               <h3 className="text-3xl font-black uppercase">Types of Attacks</h3>
+             </div>
+             <div className="glass-card p-10 rounded-[3rem]">
+               <AttackTypePie />
+               <div className="mt-8 grid grid-cols-2 gap-4 text-xs font-bold text-slate-600">
+                 <p>• Suicide Bombing</p>
+                 <p>• Sniper / Shooting</p>
+                 <p>• IED Explosions</p>
+                 <p>• Quadcopter Drones</p>
+               </div>
+             </div>
           </div>
-          <div className="relative z-10 space-y-16">
-            <div className="space-y-4">
-               <div className="w-16 h-1 bg-red-600 rounded-full" />
-               <h2 className="text-5xl font-heading font-black text-slate-900 uppercase">Weaponry & Technical Lethality</h2>
-               <p className="text-xl text-slate-500 font-medium max-w-3xl">Surplus military-grade equipment from NATO withdrawals has significantly enhanced TTP's night-fighting and long-range engagement capabilities.</p>
+          
+          <div className="space-y-12">
+             <div className="flex items-center space-x-4">
+               <div className="p-3 bg-blue-100 text-blue-600 rounded-xl"><Crosshair /></div>
+               <h3 className="text-3xl font-black uppercase">Primary Targets</h3>
+             </div>
+             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {[
+                  { label: "Security Forces", icon: <ShieldCheck />, desc: "Police & military in KP/FATA." },
+                  { label: "Politicians", icon: <Building2 />, desc: "High intensity during 2018 elections." },
+                  { label: "Healthcare Teams", icon: <HeartPulse />, desc: "Polio workers in KP & Balochistan." },
+                  { label: "Minorities", icon: <Landmark />, desc: "Shia scholars and community." },
+                  { label: "Checkposts", icon: <MapPin />, desc: "Strategic frontier locations." },
+                  { label: "Urban Centers", icon: <Globe />, desc: "Hotels, mosques, and shrines." }
+                ].map((t, idx) => (
+                  <div key={idx} className="glass-card p-6 rounded-3xl flex items-start space-x-4">
+                    <div className="text-slate-400">{t.icon}</div>
+                    <div>
+                      <p className="font-black text-slate-900 leading-none mb-1">{t.label}</p>
+                      <p className="text-xs text-slate-500 leading-tight">{t.desc}</p>
+                    </div>
+                  </div>
+                ))}
+             </div>
+          </div>
+        </section>
+
+        {/* FUNDING SOURCES */}
+        <section className="space-y-16">
+          <div className="flex items-center space-x-6">
+            <div className="p-4 glass-card rounded-2xl text-emerald-600"><DollarSign size={32} /></div>
+            <h2 className="text-4xl font-heading font-black text-slate-900 uppercase">Financing Insurgency</h2>
+          </div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+            <div className="lg:col-span-5 glass-card p-12 rounded-[3rem] border-none shadow-xl flex flex-col justify-between">
+              <FundingPie />
+              <div className="mt-8 space-y-4">
+                 <div className="p-6 bg-slate-50 rounded-2xl border border-slate-100">
+                    <p className="text-[10px] font-black uppercase text-slate-400 mb-2">High Profile Extortion</p>
+                    <p className="text-sm font-bold">Rs 8M from KP Minister Atif Khan</p>
+                    <p className="text-sm font-bold">$36,350 from former KP governor</p>
+                 </div>
+              </div>
             </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div className="lg:col-span-7 space-y-6">
               {[
-                { label: "Modern Sniper Units", value: "M24 Rifles with Thermal Scopes", color: "blue", desc: "Allows precision strikes in total darkness." },
-                { label: "Close Quarters", value: "M4 Carbines with Trijicon ACOG", color: "amber", desc: "Standardized tactical optics for urban warfare." },
-                { label: "Heavy Assault", value: "M16A4 Platforms", color: "red", desc: "Long-range semi-automatic fire capability." }
-              ].map((weapon, i) => (
-                <div key={i} className="p-10 bg-white rounded-[2.5rem] border border-slate-100 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
-                   <div className={`w-10 h-10 rounded-xl mb-6 bg-${weapon.color}-600/10 flex items-center justify-center text-${weapon.color}-600`}>
-                     <Zap size={20} />
+                { title: "Domestic & International Patronage (50%)", desc: "Protection rackets and global donations via networks like Al-Qaeda ($15M via Al-Hara-main).", icon: <ExternalLink /> },
+                { title: "Narcotics Trafficking (30%)", desc: "Heroin trade via Karachi to global markets (USA, EU, China, UAE). Profits support families of prisoners.", icon: <Activity /> },
+                { title: "Criminal Economy (20%)", desc: "Kidnappings, bank robberies, 'Jizya' tax on non-Muslims, and 'Zakat' on businesses.", icon: <Briefcase /> },
+                { title: "Natural Resources & Smuggling", desc: "$100M+ from Swat timber. Illegal mining, smuggling antiquities, and quarry control.", icon: <Gem /> }
+              ].map((f, i) => (
+                <div key={i} className="glass-card p-8 rounded-[2.5rem] flex items-start space-x-6">
+                   <div className="p-4 bg-emerald-50 text-emerald-600 rounded-2xl">{f.icon}</div>
+                   <div>
+                     <h4 className="text-xl font-black text-slate-900 mb-2">{f.title}</h4>
+                     <p className="text-sm text-slate-500 leading-relaxed">{f.desc}</p>
                    </div>
-                   <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-3">{weapon.label}</p>
-                   <p className="text-2xl font-black text-slate-900 mb-3">{weapon.value}</p>
-                   <p className="text-sm text-slate-500">{weapon.desc}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Notable Attacks Timeline (Redesigned) */}
+        {/* WEAPONS & LETHALITY */}
+        <section className="dark-section-card p-16 md:p-24 rounded-[3.5rem] relative overflow-hidden group">
+          <div className="absolute top-0 right-0 p-16 opacity-5 group-hover:scale-110 transition-transform duration-1000"><Zap size={400} /></div>
+          <div className="relative z-10 space-y-16">
+            <div className="space-y-4">
+              <h2 className="text-5xl font-heading font-black uppercase">Advanced Weaponry</h2>
+              <p className="text-xl text-slate-400 max-w-2xl leading-relaxed">Modernization of tactical gear has significantly increased night-fighting and precision capabilities.</p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+               <div className="p-8 bg-white/5 border border-white/10 rounded-3xl">
+                 <p className="text-red-500 font-bold mb-2">M24 Sniper Rifles</p>
+                 <p className="text-sm text-slate-400">Equipped with Thermal Scopes for precision strikes in total darkness.</p>
+               </div>
+               <div className="p-8 bg-white/5 border border-white/10 rounded-3xl">
+                 <p className="text-blue-500 font-bold mb-2">M4 Carbines</p>
+                 <p className="text-sm text-slate-400">Fitted with Trijicon ACOG scopes for high-accuracy urban warfare.</p>
+               </div>
+               <div className="p-8 bg-white/5 border border-white/10 rounded-3xl">
+                 <p className="text-emerald-500 font-bold mb-2">M16A4 Platforms</p>
+                 <p className="text-sm text-slate-400">Integrated thermal imaging for long-range target acquisition.</p>
+               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* AIRSTRIKES UPDATE */}
+        <section className="glass-card p-12 md:p-20 rounded-[3rem] border-l-[16px] border-l-blue-600 bg-blue-50/30">
+           <div className="flex flex-col md:flex-row items-center gap-10">
+              <div className="p-8 bg-blue-600 text-white rounded-[2rem] shadow-2xl shadow-blue-500/30">
+                <Plane size={64} />
+              </div>
+              <div className="space-y-6">
+                <div className="px-4 py-1 bg-blue-600 text-white text-[10px] font-black uppercase tracking-widest rounded-full w-fit">Dec 2024 Operations</div>
+                <h3 className="text-4xl font-black text-slate-900 uppercase italic">Airstrikes in Paktika</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div className="space-y-2">
+                    <p className="text-3xl font-black text-blue-600">71 Militants</p>
+                    <p className="text-sm font-bold text-slate-500">Reportedly killed in strategic strikes across TTP camps.</p>
+                  </div>
+                  <div className="space-y-3">
+                    <p className="text-sm font-black uppercase tracking-widest text-slate-400">Infrastructure Destroyed:</p>
+                    <ul className="text-sm font-bold text-slate-600 space-y-1">
+                      <li>• Suicide jacket manufacturing plant</li>
+                      <li>• Umar Media wing (TTP propaganda HQ)</li>
+                      <li>• Key command centers (Sher Zaman / Abu Hamza)</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+           </div>
+        </section>
+
+        {/* NOTABLE ATTACKS TIMELINE */}
         <section className="space-y-16">
           <div className="flex items-center space-x-6">
-            <div className="p-4 glass-card rounded-2xl text-red-600 shadow-xl shadow-red-500/10"><History size={32} /></div>
-            <h2 className="text-4xl font-heading font-black text-slate-900 uppercase tracking-tight">Timeline of Major Incidents</h2>
+            <div className="p-4 glass-card rounded-2xl text-red-600"><Flame size={32} /></div>
+            <h2 className="text-4xl font-heading font-black text-slate-900 uppercase">Incident Timeline</h2>
           </div>
           
-          <div className="space-y-8 relative before:absolute before:left-8 before:top-0 before:bottom-0 before:w-1 before:bg-slate-100">
+          <div className="space-y-8 relative before:absolute before:left-[1.85rem] before:top-0 before:bottom-0 before:w-0.5 before:bg-slate-100">
             {[
-              { date: "March 2009", title: "Lahore Police Academy Attack", impact: "8 Killed, 100+ Wounded", color: "red" },
-              { date: "Oct 2012", title: "Shooting of Malala Yousafzai", impact: "Provoked Global Outrage", color: "blue" },
-              { date: "Dec 2014", title: "APS Peshawar Massacre", impact: "130+ Students Martyred", color: "red" },
-              { date: "April 2021", title: "Quetta Hotel Bombing", impact: "Targeting Foreign Dignitaries", color: "amber" }
-            ].map((attack, i) => (
-              <div key={i} className="relative pl-24 group">
-                <div className="absolute left-6 top-8 w-5 h-5 rounded-full border-4 border-white bg-slate-300 group-hover:bg-red-600 transition-colors z-10" />
-                <div className="glass-card p-10 rounded-[3rem] border-l-[12px] border-l-red-600 hover:shadow-2xl transition-all duration-300">
-                  <div className="flex flex-col md:flex-row md:items-center gap-4 mb-4">
-                    <span className="text-red-600 font-mono font-bold text-xl uppercase tracking-tighter bg-red-50 px-4 py-1 rounded-full w-fit">{attack.date}</span>
-                    <h4 className="font-black text-3xl text-slate-900">{attack.title}</h4>
-                  </div>
-                  <p className="text-xl text-slate-500 font-bold italic border-l-4 border-slate-200 pl-6">{attack.impact}</p>
+              { date: "Mar 2009", title: "Lahore Police Academy", res: "8 killed, 100 wounded." },
+              { date: "Oct 2009", title: "World Food Programme HQ", res: "Islamabad HQ targeted." },
+              { date: "Dec 2010", title: "Mohmand Agency Admin", res: "40+ killed in bombing." },
+              { date: "May 2011", title: "Mehran Naval Base", res: "Karachi base attack; 10+ officers dead." },
+              { date: "Oct 2012", title: "Malala Yousafzai Shooting", res: "Global outrage; attempt on activist." },
+              { date: "Dec 2014", title: "APS Peshawar Massacre", res: "130+ students martyred; darkest day." },
+              { date: "April 2021", title: "Quetta Hotel Bombing", res: "Targeting high-profile foreign guests." }
+            ].map((a, i) => (
+              <div key={i} className="relative pl-20 group">
+                <div className="absolute left-6 top-2 w-3 h-3 rounded-full bg-slate-200 group-hover:bg-red-600 transition-colors" />
+                <div className="glass-card p-6 rounded-3xl hover:border-red-200 transition-all duration-300">
+                  <span className="text-red-600 font-black text-[10px] uppercase tracking-widest mb-1 block">{a.date}</span>
+                  <h4 className="text-xl font-black text-slate-900">{a.title}</h4>
+                  <p className="text-sm text-slate-500 mt-1">{a.res}</p>
                 </div>
               </div>
             ))}
-            <div className="pl-24">
-              <button className="flex items-center space-x-3 text-slate-400 font-black text-[10px] uppercase tracking-[0.4em] hover:text-red-600 transition-colors">
-                <span>View Extended Incident Database</span>
-                <ChevronRight size={14} />
-              </button>
+          </div>
+
+          <div className="p-12 glass-card rounded-[3rem] bg-slate-900 text-white space-y-6">
+            <h3 className="text-2xl font-black uppercase tracking-tight">International Profile</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+               <div className="p-6 bg-white/5 rounded-2xl">
+                  <p className="text-red-400 font-bold mb-2">Times Square Attempt (2010)</p>
+                  <p className="text-sm opacity-80 leading-relaxed">Failed bombing in New York City, USA, linked to TTP training camps.</p>
+               </div>
+               <div className="p-6 bg-white/5 rounded-2xl">
+                  <p className="text-red-400 font-bold mb-2">US Consulate Peshawar (2010)</p>
+                  <p className="text-sm opacity-80 leading-relaxed">Direct assault involving suicide bombers; 6 killed, 20 wounded.</p>
+               </div>
             </div>
           </div>
         </section>
 
-        {/* Funding Sources */}
-        <section className="space-y-16">
-          <div className="flex items-center space-x-6">
-            <div className="p-4 glass-card rounded-2xl text-emerald-600 shadow-xl shadow-emerald-500/10"><DollarSign size={32} /></div>
-            <h2 className="text-4xl font-heading font-black text-slate-900 uppercase tracking-tight">Financing the Insurgency</h2>
+        {/* FOOTER & SOURCES */}
+        <footer className="pt-24 border-t border-slate-200 space-y-12">
+          <div className="text-center space-y-2">
+            <Info size={24} className="mx-auto text-slate-300" />
+            <h2 className="text-[10px] font-black uppercase text-slate-400 tracking-[0.4em]">Intelligence Reference Index</h2>
           </div>
-          
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-            <div className="lg:col-span-5 glass-card p-16 rounded-[4rem] border-none shadow-2xl flex flex-col justify-between">
-              <div>
-                <h3 className="text-2xl font-black mb-8 text-slate-900">Capital Flow Estimates</h3>
-                <FundingPie />
-              </div>
-              <div className="mt-12 space-y-4">
-                <div className="flex items-center justify-between text-sm">
-                  <span className="font-bold text-slate-400">Total estimated annual budget</span>
-                  <span className="font-black text-emerald-600">US $150M+</span>
-                </div>
-                <div className="h-2 w-full bg-slate-100 rounded-full overflow-hidden">
-                  <div className="h-full bg-emerald-500 w-[85%]" />
-                </div>
-              </div>
-            </div>
-            
-            <div className="lg:col-span-7 space-y-8 overflow-y-auto max-h-[700px] custom-scrollbar pr-6">
-               {[
-                 { title: "Foreign & Domestic Patronage (~50%)", items: ["Protection rackets Targeting KP Ministers", "Extortion demands reaching up to $36k+ per official", "Donations via Al-Qaeda connected networks"], color: "emerald" },
-                 { title: "Narcotics Trafficking (~30%)", items: ["Heroin transit via Karachi to global markets", "Distribution network reach into China and UAE", "Laundering profits back to frontline commanders"], color: "blue" },
-                 { title: "Shadow Economy Extraction", items: ["'Jizya' and 'Zakat' taxes in border regions", "Exploitation of Swat Valley timber ($100M historical impact)", "Illegal mining of precious stones and minerals"], color: "amber" }
-               ].map((source, i) => (
-                 <div key={i} className="glass-card p-10 rounded-[3rem] border-t-8 shadow-md" style={{ borderTopColor: source.color === 'emerald' ? '#10b981' : source.color === 'blue' ? '#2563eb' : '#f59e0b' }}>
-                    <h4 className="font-black text-slate-900 text-2xl mb-6">{source.title}</h4>
-                    <ul className="space-y-4">
-                      {source.items.map((item, idx) => (
-                        <li key={idx} className="text-base text-slate-600 flex items-start space-x-4">
-                          <div className={`w-2 h-2 rounded-full mt-2 shrink-0 bg-${source.color}-500`} />
-                          <span className="font-medium">{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                 </div>
-               ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Sources & References */}
-        <footer className="pt-24 border-t border-slate-200 space-y-16">
-          <div className="flex flex-col items-center text-center space-y-4">
-            <Info size={32} className="text-slate-300" />
-            <h2 className="text-xs font-black uppercase text-slate-400 tracking-[0.5em]">Intelligence Dossier Reference</h2>
-          </div>
-          
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-12 gap-y-6 text-[10px] text-slate-400 font-bold uppercase tracking-[0.2em] leading-relaxed">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 text-[9px] text-slate-400 font-bold uppercase tracking-widest leading-relaxed">
              {[
-               "UN Security Council S/2021/486",
-               "CTC Sentinel Vol. 16, Issue 4",
-               "Center for Research & Security Studies (CRSS)",
-               "Global Terrorism Database (GTD)",
-               "Pak Institute for Peace Studies (PIPS)",
-               "US Institute of Peace Strategic Report",
-               "The Diplomat Intelligence Briefings",
-               "Al Jazeera Investigative Unit",
-               "Institute for Economics & Peace (IEP)",
-               "Geo News Open Source Intelligence",
-               "South Asia Terrorism Portal (SATP)"
-             ].map((source, i) => (
-               <div key={i} className="flex items-center space-x-3 group">
-                 <span className="w-1.5 h-1.5 bg-slate-200 rounded-full group-hover:bg-blue-600 transition-colors" />
-                 <span className="group-hover:text-slate-600 transition-colors">{source}</span>
+               "UN Security Council 2011", "CTC Sentinel 2023/2025", "Al Jazeera Investigative Unit",
+               "The Diplomat Intelligence Brief", "CRSS Pakistan Audit", "USIP Strategic Report 2021",
+               "PIPS Terrorism Report 2023/25", "Geo News OSINT Briefings", "IEP Global Terror Index 2025",
+               "CESCUBE Security Analysis", "SATP Incident Database"
+             ].map((s, i) => (
+               <div key={i} className="flex items-center space-x-2">
+                 <div className="w-1 h-1 bg-slate-200 rounded-full" />
+                 <span>{s}</span>
                </div>
              ))}
           </div>
-          
-          <div className="text-center pt-12">
-            <p className="text-[9px] font-black text-slate-300 uppercase tracking-[1em]">END OF BRIEFING</p>
-          </div>
+          <p className="text-center text-[9px] font-black text-slate-300 uppercase tracking-[1em] py-12">End of Dossier</p>
         </footer>
       </div>
     </div>
